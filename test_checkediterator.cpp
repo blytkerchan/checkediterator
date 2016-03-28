@@ -55,7 +55,7 @@ int testOverflow01()
     {
         generate_n(it_a, 11, [&i](){ return i++; });
     }
-    catch (range_error const &e)
+    catch (out_of_range const &e)
     {
         caught = true;
         cout << "Expected exception caught" << endl;
@@ -76,7 +76,7 @@ int testOverflow02()
     {
         generate_n(it_a, 11, [&i](){ return i++; });
     }
-    catch (range_error const &e)
+    catch (out_of_range const &e)
     {
         caught = true;
         cout << "Expected exception caught" << endl;

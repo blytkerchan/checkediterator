@@ -37,13 +37,13 @@ namespace Vlinder {
 
         T& operator*() const
         {
-            if (at_end_ || (beg_ == end_)) throw std::range_error("Dereferenced invalid iterator");
+            if (at_end_ || (beg_ == end_)) throw std::out_of_range("Dereferenced invalid iterator");
             return *beg_;
         }
         
         CheckedOutputIterator& operator++()
         {
-            if (at_end_ || (beg_ == end_)) throw std::range_error("Increment past end-of-range");
+            if (at_end_ || (beg_ == end_)) throw std::out_of_range("Increment past end-of-range");
             ++beg_;
             return *this;
         }
